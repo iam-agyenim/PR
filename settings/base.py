@@ -60,7 +60,7 @@ MIDDLEWARE = [
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
 ]
 
-ROOT_URLCONF = "Project.urls"
+ROOT_URLCONF = "marygatchell.urls"
 
 TEMPLATES = [
     {
@@ -80,7 +80,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "Project.wsgi.application"
+WSGI_APPLICATION = "marygatchell.wsgi.application"
 
 
 # Database
@@ -161,7 +161,7 @@ STORAGES = {
 
 # Wagtail settings
 
-WAGTAIL_SITE_NAME = "Project"
+WAGTAIL_SITE_NAME = "marygatchell"
 
 # Search
 # https://docs.wagtail.org/en/stable/topics/search/backends.html
