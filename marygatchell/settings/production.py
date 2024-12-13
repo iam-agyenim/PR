@@ -5,7 +5,7 @@ from sentry_sdk.integrations.django import DjangoIntegration
 
 DEBUG = False
 SECRET_KEY = 'Kobbyhbjj^-f71+0l2+0=75y1iza&4@_+l3bu+_srpzu4$d3k'  
-ALLOWED_HOSTS = ['146.190.123.147', 'marygatchell.com']
+ALLOWED_HOSTS = ['localhost','146.190.123.147', 'marygatchell.com','www.marygatchell.com' ]
 cwd = os.getcwd()
 CACHES = {
     "default": {
