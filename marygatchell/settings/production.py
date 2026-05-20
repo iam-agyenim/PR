@@ -4,7 +4,7 @@ import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 
 DEBUG = False
-SECRET_KEY = 'Kobbyhbjj^-f71+0l2+0=75y1iza&4@_+l3bu+_srpzu4$d3k'  
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 ALLOWED_HOSTS = ['localhost','146.190.123.147', 'marygatchell.com','www.marygatchell.com' ]
 cwd = os.getcwd()
 CACHES = {
@@ -18,18 +18,17 @@ CACHES = {
 DATABASES = {
     "default": {
         "ENGINE": 'django.db.backends.postgresql_psycopg2',
-        "NAME": 'marygatchell',
-        "USER": 'marygatchell',
-        "PASSWORD": 'Kobbypraize1234@#$',
-        "HOST": 'localhost',
-        "PORT": "5432",
+        "NAME": os.environ.get('DB_NAME', 'marygatchell'),
+        "USER": os.environ.get('DB_USER', 'marygatchell'),
+        "PASSWORD": os.environ['DB_PASSWORD'],
+        "HOST": os.environ.get('DB_HOST', 'localhost'),
+        "PORT": os.environ.get('DB_PORT', '5432'),
     }
 }
 
 
-
 sentry_sdk.init(
-    dsn="https://fed26037191263aef5c36b01809472ac@o4508445830021120.ingest.us.sentry.io/4508445834149888",
+    dsn=os.environ.get('SENTRY_DSN', ''),
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for tracing.
     traces_sample_rate=1.0,
