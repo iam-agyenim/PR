@@ -14,6 +14,15 @@ CACHES = {
     }
 }
 
+# Enable per-site page caching (cache rendered pages for 10 minutes)
+CACHE_MIDDLEWARE_SECONDS = 600
+CACHE_MIDDLEWARE_KEY_PREFIX = "marygatchell"
+MIDDLEWARE = (
+    ["django.middleware.cache.UpdateCacheMiddleware"]
+    + MIDDLEWARE
+    + ["django.middleware.cache.FetchFromCacheMiddleware"]
+)
+
 
 DATABASES = {
     "default": {
